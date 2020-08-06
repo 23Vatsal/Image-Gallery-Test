@@ -26,5 +26,30 @@ namespace Image_Gallery_Test
         {
 
         }
+
+        private void tablePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void _search_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
