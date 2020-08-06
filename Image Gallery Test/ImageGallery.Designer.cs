@@ -32,7 +32,7 @@ namespace Image_Gallery_Test
 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 749);
+            this.ClientSize = new System.Drawing.Size(780, 800);
             this.Controls.Add(this.sc1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(810, 810);
