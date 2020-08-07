@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Image_Gallery_Test
 {
-    class DataFetcher
+    public class DataFetcher
     {
         async Task<string> GetDatafromService(string searchstring)
         {

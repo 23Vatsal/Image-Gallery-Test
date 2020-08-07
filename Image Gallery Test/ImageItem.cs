@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Image_Gallery_Test
 {
-    class ImageItem
+    public class ImageItem
     {
         public string Id { get; set; }
         public string Name { get; set; }

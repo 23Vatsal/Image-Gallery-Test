@@ -26,11 +26,6 @@ namespace Image_Gallery_Test
 
         }
 
-        private void c1SplitterPanel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tablePanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -68,12 +63,14 @@ namespace Image_Gallery_Test
 
         private void _imageTileControl_TileChecked(object sender, C1.Win.C1Tile.TileEventArgs e)
         {
-
+            checkedItems++;
+            _exportImage.Visible = true;
         }
 
         private void _imageTileControl_TileUnchecked(object sender, C1.Win.C1Tile.TileEventArgs e)
         {
-
+            checkedItems--;
+            _exportImage.Visible = checkedItems > 0;
         }
 
         private void _imageTileControl_Paint(object sender, PaintEventArgs e)
@@ -92,14 +89,14 @@ namespace Image_Gallery_Test
         int checkedItems = 0;
 
         //Code for click event
-        private async void OnSearchClick(object sender, EventArgs e)
+        /*private async void OnSearchClick(object sender, EventArgs e)
         {
             statusStrip1.Visible = true;
             imagesList = await
-           datafetch.GetImageData(_searchbox.Text);
+           datafetch.GetImageData(_searchBox.Text);
             AddTiles(imagesList);
             statusStrip1.Visible = false;
-        }
+        }*/
 
         //This method will add images to tile control
         private void AddTiles(List<ImageItem> imageList)
@@ -127,6 +124,7 @@ namespace Image_Gallery_Test
         {
             checkedItems++;
             _exportImage.Visible = true;
+            
         }
         private void OnTileUnchecked(object sender, TileEventArgs e)
         {
@@ -153,25 +151,24 @@ namespace Image_Gallery_Test
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
 
-                imagePdfDocument.Save(saveFile.FileName);
+                c1PdfDocument1.Save(saveFile.FileName);
 
             }
         }
-        private Image imagePdfDocument;
         //This method converts to pdf
         private void ConvertToPdf(List<Image> images)
         {
-            RectangleF rect = imagePdfDocument.PageRectangle;
+            RectangleF rect = c1PdfDocument1.PageRectangle;
             bool firstPage = true;
             foreach (var selectedimg in images)
             {
                 if (!firstPage)
                 {
-                    imagePdfDocument.NewPage();
+                    c1PdfDocument1.NewPage();
                 }
                 firstPage = false;
                 rect.Inflate(-72, -72);
-                imagePdfDocument.DrawImage(selectedimg, rect);
+                c1PdfDocument1.DrawImage(selectedimg, rect);
             }
 
         }
@@ -179,7 +176,7 @@ namespace Image_Gallery_Test
         //These methods are for defining the colors and paints.
         private void OnSearchPanelPaint(object sender, PaintEventArgs e)
         {
-            Rectangle r = _searchbox.Bounds;
+            Rectangle r = _searchBox.Bounds;
             r.Inflate(3, 3);
             Pen p = new Pen(Color.LightGray);
             e.Graphics.DrawRectangle(p, r);
@@ -203,7 +200,60 @@ namespace Image_Gallery_Test
             e.Graphics.DrawLine(p, 0, 43, 800, 43);
         }
 
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void _searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void _imageTileControl_TileChecked_1(object sender, TileEventArgs e)
+        {
+            checkedItems++;
+            _exportImage.Visible = true;
+        }
+
+        private void _imageTileControl_TileUnchecked_1(object sender, TileEventArgs e)
+        {
+            checkedItems--;
+            _exportImage.Visible = checkedItems > 0;
+        }
+
+        private void _imageTileControl_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void _search_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private async void _search_Click_1(object sender, EventArgs e)
+        {
+            statusStrip1.Visible = true;
+            imagesList = await
+           datafetch.GetImageData(_searchBox.Text);
+            AddTiles(imagesList);
+            statusStrip1.Visible = false;
+        }
+
+        private void _searchBox_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void _exportImage_BackgroundImageChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
