@@ -64,13 +64,13 @@ namespace Image_Gallery_Test
         private void _imageTileControl_TileChecked(object sender, C1.Win.C1Tile.TileEventArgs e)
         {
             checkedItems++;
-            _exportImage.Visible = true;
+            _exportImage2.Visible = true;
         }
 
         private void _imageTileControl_TileUnchecked(object sender, C1.Win.C1Tile.TileEventArgs e)
         {
             checkedItems--;
-            _exportImage.Visible = checkedItems > 0;
+            _exportImage2.Visible = checkedItems > 0;
         }
 
         private void _imageTileControl_Paint(object sender, PaintEventArgs e)
@@ -183,8 +183,8 @@ namespace Image_Gallery_Test
         }
         private void OnExportImagePaint(object sender, PaintEventArgs e)
         {
-            Rectangle r = new Rectangle(_exportImage.Location.X,
-           _exportImage.Location.Y, _exportImage.Width, _exportImage.Height);
+            Rectangle r = new Rectangle(_exportImage2.Location.X,
+           _exportImage2.Location.Y, _exportImage2.Width, _exportImage2.Height);
          r.X -= 29;
             r.Y -= 3;
             r.Width--;

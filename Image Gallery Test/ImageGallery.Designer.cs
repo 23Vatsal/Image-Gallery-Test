@@ -26,6 +26,7 @@ namespace Image_Gallery_Test
             this._searchBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this._search = new System.Windows.Forms.PictureBox();
+            this._exportImage2 = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this._imageTileControl = new C1.Win.C1Tile.C1TileControl();
@@ -43,6 +44,7 @@ namespace Image_Gallery_Test
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._search)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._exportImage2)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._exportImage)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +83,7 @@ namespace Image_Gallery_Test
             this.tablePanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
             this.tablePanel1.Controls.Add(this.panel1, 1, 0);
             this.tablePanel1.Controls.Add(this.panel3, 2, 0);
+            this.tablePanel1.Controls.Add(this._exportImage2, 0, 0);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
@@ -147,6 +150,19 @@ namespace Image_Gallery_Test
             this._search.TabIndex = 0;
             this._search.TabStop = false;
             this._search.Click += new System.EventHandler(this._search_Click_1);
+            // 
+            // _exportImage2
+            // 
+            this._exportImage2.Image = ((System.Drawing.Image)(resources.GetObject("_exportImage2.Image")));
+            this._exportImage2.Location = new System.Drawing.Point(3, 3);
+            this._exportImage2.Name = "_exportImage2";
+            this._exportImage2.Size = new System.Drawing.Size(54, 34);
+            this._exportImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._exportImage2.TabIndex = 6;
+            this._exportImage2.TabStop = false;
+            this._exportImage2.Visible = false;
+            this._exportImage2.Click += new System.EventHandler(this.OnExportClick);
+            this._exportImage2.Paint += new System.Windows.Forms.PaintEventHandler(this.OnExportImagePaint);
             // 
             // statusStrip1
             // 
@@ -276,6 +292,7 @@ namespace Image_Gallery_Test
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._search)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._exportImage2)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._exportImage)).EndInit();
@@ -297,6 +314,7 @@ namespace Image_Gallery_Test
         private Panel panel3;
         private PictureBox _search;
         private C1.Win.C1Tile.Group Group1;
+        private PictureBox _exportImage2;
     }
 }
 
